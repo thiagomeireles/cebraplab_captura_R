@@ -30,8 +30,8 @@ Os participantes, ao fim do curso, serão capazes de:
 
 - [04/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191104.md): O básico da captura de páginas com R - páginas com tabelas 
 - [05/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191105.md): O básico da captura de páginas com R - portais de notícias
-- [06/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191106.md): Tópicos de captura de dados - Formulários web, twitter, facebook e .pdf
-- [07/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191107.md): Rápida introdução à mineração de texto com R
+- [06/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191106.md): Rápida introdução à mineração de texto com R
+- [07/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191107.md): Tópicos de captura de dados - Formulários web, twitter, facebook e .pdf
 - [08/11/2019](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/roteiros/20191108.md): Desafios de raspagem de dados
 
 ## Tutoriais
