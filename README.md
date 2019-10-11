@@ -36,27 +36,27 @@ Os participantes, ao fim do curso, serão capazes de:
 
 ## Tutoriais
 
-[Tutorial 1](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial01.Rmd) - Páginas com tabelas
+[Tutorial 1](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_01.Rmd) - Páginas com tabelas
 
-[Tutorial 2](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial02.Rmd) - Introdução ao XPath
+[Tutorial 2](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_02.Rmd) - Introdução ao XPath
 
-[Tutorial 3](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial03.Rmd) - Captura de notícias da Folha
+[Tutorial 3](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_03.Rmd) - Captura de notícias da Folha
 
-[Tutorial 4](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial04.Rmd) - Captura de notícias do Data Folha
+[Tutorial 4](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_04.Rmd) - Captura de notícias do Data Folha
 
-[Tutorial 5](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial05.Rmd) - Formulários na web
+[Tutorial 5](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_05.Rmd) - Formulários na web
 
-[Tutorial 6](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial06.Rmd) - Twitter
+[Tutorial 6](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_06.Rmd) - Twitter
 
-[Tutorial 7](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial07.Rmd) - Facebook
+[Tutorial 7](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_07.Rmd) - Facebook
 
-[Tutorial 8](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial08.Rmd)- PDF
+[Tutorial 8](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_08.Rmd)- PDF
 
-[Tutorial 9](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial09.Rmd) - Mineração de Texto - pacote stringr
+[Tutorial 9](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_09.Rmd) - Mineração de Texto - pacote stringr
 
-[Tutorial 10](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial10.Rmd) - Mineração de Texto - pacote tm
+[Tutorial 10](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_10.Rmd) - Mineração de Texto - pacote tm
 
-[Tutorial 11](https://github.com/leobarone/cebrap_lab_raspagem_r/blob/master/tutorials/webscraping_tutorial11.Rmd) - Mineração de Texto - pacote tidytext
+[Tutorial 11](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_11.Rmd) - Mineração de Texto - pacote tidytext
 
 ### Referências
 
