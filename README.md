@@ -24,7 +24,7 @@ Os participantes, ao fim do curso, serão capazes de:
 - Coletar dados, via API em R, do Twitter e Facebook
 - Coletar dados de páginas em formato PDF
 - Realizar tarefas relacionadas a mineiração de texto a partir de diferentes abordagens
-- Produzir gáficos e grafos mais simples a partir dos dados coletados
+- Produzir gráficos e grafos mais simples a partir dos dados coletados
 
 ## Roteiros, calendário e tutoriais
 
