@@ -168,7 +168,7 @@ for(i in 0:5){
 
 Muito mais simples do que parece, não? Mas veja bem, até agora tudo que fizemos foi produzir um texto que, propositalmente, é igual ao endereço das páginas cujo conteúdo nos interessa. Porém, ainda não acessamos o seu conteúdo. Aqui recorreremos mais uma vez à função _read_html_ do _rvest_.
 
-Para capturar uma página, ou melhor, o código HTML no qual a página está escrita, utilizamos a função _read\_html_, do pacote _rvest_. Vamos usar um exemplo com wikipedia.
+Para capturar uma página, ou melhor, o código HTML no qual a página está escrita, utilizamos a função _read\_html_, do pacote _rvest_. Vamos observar o que encontramos com o último *url* da busca no site da ALESP.
 
 ```{r}
 pagina <- read_html(url)
