@@ -36,7 +36,7 @@ Os participantes, ao fim do curso, serão capazes de:
 
 ## Tutoriais
 
-[Tutorial 1](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_01.Rmd) - Páginas com tabelas
+[Tutorial 1](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_01.md) - Páginas com tabelas
 
 [Tutorial 2](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_02.Rmd) - Introdução ao XPath
 
