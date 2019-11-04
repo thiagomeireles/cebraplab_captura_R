@@ -417,7 +417,7 @@ dados <- dados %>%
 ```
 
 Pronto! Conseguimos fazer nossa primeira captura de dados. Se quiser, você pode repetir o procedimento para pegar o resto dos resultados ou reproduzir o mesmo processo para capturar outras informações do site.
-
+ 
 # Desafio
 
 Passamos por um tutorial bastante puxado, não? Agora podemos explorar o site de outra Assembleia Estadual, a do [Amapá](http://www.al.ap.gov.br/pagina.php?pg=buscar_proposicao) e buscar proposições diveras. Escolha uma temática que torne muito onerosa a captura manual e divirta-se. 
