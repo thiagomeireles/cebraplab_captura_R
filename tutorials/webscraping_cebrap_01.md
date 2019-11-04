@@ -48,10 +48,11 @@ O _rvest_ possui uma função específica para ler as tabelas e fazer o download
 
 ```{r}
 tabelas_wiki <- html_table(pagina)
-print(tabelas_wiki)
+class(tabelas_wiki)
+str(tabelas_wiki)
 ```
 
-Ao imprimir os resultados da tabela, vemos que foram armazenados em uma lista com 7 tabelas. Voltaremos a elas mais tarde.
+Utilizando as funções _class_ e _str_ conseguimos identificar o tipo de objeto gerado e como ele foi estruturado. Geramos em uma lista com 7 tabelas. Voltaremos a elas mais tarde.
 
 # Atividade inicial - Pesquisa de Proposições na ALESP
 
