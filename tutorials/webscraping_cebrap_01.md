@@ -348,8 +348,28 @@ for (i in 0:4) {
 }
 ```
 
+São 100 observações (5 páginas com 20 resultados) e 4 variáveis (Autor, Tipo de Proposta, Nome do Projeto, Ementa). São 4 variáveis  do tipo "character", mas precisamos checar se estão estruturadas. As 6 observações apresentam o resultado adequado, o que nos dá uma boa dica que que tudo ocorreu bem até a última página capturada.
 
-No entanto, vimos que nossas informações estão basntate bagunçadas, não?Vemos que o tipo de proposta (com sua data), o número do projeto e sua ementa estão em apenas uma variável. Da mesma forma, todas as linhas pares da tabela são "vazias" pela estrutura da tabela no HTML.
+Vamos observar o resultado utilizando a função "str" (abreviação de structure), que retorna a estrutura do data frame, e "tail", que é como a função "head", mas retorna as 6 últimas em vez das 6 primeiras observações.
+
+```{r}
+# Estrutura do data frame
+str(dados)
+
+# 6 primeiras observações
+head(dados)
+
+# 6 últimas observações
+tail(dados)
+```
+
+Com a função _View_ (com V maiúsculo, algo raríssimo nas funções de R), podemos ver os dados em uma planilha.
+
+```{r}
+View(dados)
+```
+
+No entanto, vimos que nossas informações estão basntate bagunçadas, não? Vemos que o tipo de proposta (com sua data), o número do projeto e sua ementa estão em apenas uma coluna Da mesma forma, todas as linhas pares da tabela são "vazias" pela estrutura da tabela no HTML.
 
 Primeiro vamos selecionar apenas as linhas ímpares, as que contém a informação que procuramos. Para isso, criaremos uma sequência com apenas os valores ímpares. Após isso, "filtramos" apenas as linhas dessa sequência dentre as 100 do nosso _dataframe_.
 
@@ -392,75 +412,7 @@ A próxima etapa é separar o "Nome do Projeto" de sua ementa. Realizaremos o me
 dados[1,3]
 # "\r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t"
 
-dados2 <- dados %>%
-  separate("Nome do Projeto", into = c("Nome do Projeto", "Ementa"), sep = "\r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t") #%>%
-  rbind(tabela1) 
-```
-
-Vamos observar o resultado utilizando a função "str" (abreviação de structure), que retorna a estrutura do data frame, e "tail", que é como a função "head", mas retorna as 6 últimas em vez das 6 primeiras observações.
-
-São 50 observações (5 páginas com 10 resultados) e 4 variáveis (data, título, autor, etapa), exatamente como esperávamos. As 4 variáveis são do tipo "character" contêm as informações corretas. As 6 observações apresentam o resultado adequado, o que nos dá uma boa dica que que tudo ocorreu bem até a última página capturada.
-
-```{r}
-# Estrutura do data frame
-str(dados)
-
-# 6 primeiras observações
-head(dados)
-
-# 6 últimas observações
-tail(dados)
-```
-
-Com a função _View_ (com V maiúsculo, algo raríssimo nas funções de R), podemos ver os dados em uma planilha.
-
-```{r}
-View(dados)
-```
-
-Primeiro vamos selecionar apenas as linhas ímpares, as que contém a informação que procuramos. Para isso, criaremos uma sequência com apenas os valores ímpares. Após isso, "filtramos" apenas as linhas dessa sequência dentre as 40 do nosso _dataframe_.
-
-```{r}
-seq_impar <- seq(1,39,2)
-tabela2 <- data.frame(tabela[seq_impar,])
-```
-
-Simples, não? Agora vamos observar os separadores da nossa segunda coluna. Vamos extrair o conteúdo da segunda coluna na primeira linha da tabela utilizando separadores de texto. Como isso funciona? Vamos identificar o que separa o que separa o texto relacionado ao tipo de projeto (com data) ao nome do projeto.
-
-```{r}
-tabela2[1,2]
-# Identificado o da primeira para a segunda coluna
-# "\r\n \t\t\t\t\t\t\t\t-"
-```
-
-Identificado o separador, utilizaremos a função _separate_ do pacote _dplyr_, parte do _tidyverse_, utilizando os separadores criados acima. Também conheceremos os _pipes_ (%>%), as quais permitem a execução de mais de uma função em sequência para o mesmo _dataframe_ permitido nas aplicações do _tidyverse_.
-
-```{r}
-tabela <- tabela2 %>%
-  separate(Documento, into = c("Tipo de Proposta", "Nome do Projeto"), sep = "\r\n \t\t\t\t\t\t\t\t-") 
-```
-
-No entanto algumas linhas não possuíam o "tipo de proposta", mas os *missing values* ficaram na variável "Nome do Projeto". Vamos utilizar as funções do _dplyr_ _filter_ para selecionar as linhas em que temos ou não o problema, e, no fim, corrigir com _mutate_ e juntar novamente em um único _dataframe_:
-
-```{r}
-tabela2 <- tabela %>%
-  filter(!is.na(`Nome do Projeto`)) 
-# ! indica "diferente", is.na() que é um missing value
-tabela <- tabela %>%
-  filter(is.na(`Nome do Projeto`)) %>%
-  mutate(`Nome do Projeto` =`Tipo de Proposta`,
-         `Tipo de Proposta` = NA) %>%
-  rbind(tabela2)
-# rbind é a união de linhas (rows)
-```
-
-A próxima etapa é separar o "Nome do Projeto" de sua ementa. Realizaremos o mesmo processo com _separate_, mas com o segundo separador:
-
-```{r}
-tabela[1,2]
-# "\r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t"
-
-tabela <- tabela %>%
+dados <- dados %>%
   separate("Nome do Projeto", into = c("Nome do Projeto", "Ementa"), sep = "\r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t \r\n \t\t\t\t\t\t") 
 ```
 
