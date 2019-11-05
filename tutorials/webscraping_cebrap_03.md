@@ -57,7 +57,7 @@ pagina <- read_html(url_pesquisa)
 Escolhemos apenas os "nodes" que nos interessam:
 
 ```{r}
-nodes_titulos <- html_nodes(pagina, xpath = "//ol/li/div/div/a/h2/text()")
+nodes_titulos <- html_nodes(pagina, xpath = "//ol/li/div/div/a/h2[@class = 'c-headline__title']")
 nodes_links <- html_nodes(pagina, xpath = "//ol/li/div/div/a")
 ```
 
@@ -110,7 +110,7 @@ for (i in 1:361){
   
   pagina <- read_html(url_pesquisa)
   
-  nodes_titulos <- html_nodes(pagina, xpath = "//ol/li/div/div/a/h2/text()")
+  nodes_titulos <- html_nodes(pagina, xpath = "//ol/li/div/div/a/h2[@class = 'c-headline__title']")
   nodes_links <- html_nodes(pagina, xpath = "//ol/li/div/div/a")
   
   titulos <- html_text(nodes_titulos)
