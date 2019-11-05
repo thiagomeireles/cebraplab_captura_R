@@ -252,7 +252,7 @@ O primeiro passo na captura de uma página de internet é criar um objeto que co
 
 ```{r}
 library(rvest)
-url <- "https://search.folha.uol.com.br/search?q=previdencia&site=todos&results_count=86913&search_time=0%2C079&url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Dprevidencia%26site%3Dtodos&sr=26"
+url <- "https://search.folha.uol.com.br/search?q=previdencia&site=todos&results_count=86920&search_time=24%2C07&url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Dprevidencia%26site%3Dtodos&sr="
 pagina <- read_html(url)
 ```
 
