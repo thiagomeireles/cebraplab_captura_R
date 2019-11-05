@@ -360,7 +360,7 @@ Como vocês devem ter percebido, no momento do curso alguns URLs de notícias do
 Vamos incluir uma cláusula de "tentativa" na captura da página com a função _try_. Veja um exemplo com um URL inexistente:
 
 ```{r}
-url_inexistente <- "http://datafolha.folha.uol.com.br/eleicoes/2018/10/42424242-leonardo-barone-e-eleito-senador-por-sao-paulo-com-record-de-votos.shtml"
+url_inexistente <- "http://datafolha.folha.uol.com.br/eleicoes/2018/10/42424242-neymar-jr-e-eleito-senador-por-sao-paulo-com-record-de-votos.shtml"
 pagina <- try(read_html(url_inexistente))
 ```
 
