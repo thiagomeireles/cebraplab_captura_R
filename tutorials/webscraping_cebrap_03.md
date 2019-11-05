@@ -132,4 +132,4 @@ for (i in 1:361){
 
 ```
 
-Pronto! Temos agora todos os títulos e links de todos os resultados do site da Folha de São Paulo para a palavra "previdencia" em um único banco de dados.
+Pronto! Temos agora todos os títulos e links de todos os resultados do site da Folha de São Paulo nas edições impressas para a palavra "previdencia" em um único banco de dados.
