@@ -91,7 +91,7 @@ dados_pesquisa <- data.frame()
 dados_pesquisa <- bind_rows(dados_pesquisa, tabela_titulos)
 ```
 
-Chegou o momento de colocar dentro loop tudo o que queremos que execute em cada uma das vezes que ele ocorrer. Ou seja, que imprima na tela a página que está executando, que a URL da página de resultados seja construída com a função paste, para todas elas o código HTML seja examinado, lido no R e transformado em objeto XML, colete todos os links e todos os títulos e que "empilhe". Lembrando que não podemos esquecer de definir a URK que estamos usando e criar um data frame vazio para colocar todos os links e títulos coletados antes de iniciar o loop.
+Chegou o momento de colocar dentro loop tudo o que queremos que execute em cada uma das vezes que ele ocorrer. Ou seja, que imprima na tela a página que está executando, que a URL da página de resultados seja construída com a função paste, para todas elas o código HTML seja examinado, lido no R e transformado em objeto XML, colete todos os links e todos os títulos e que "empilhe". Lembrando que não podemos esquecer de definir a URL que estamos usando e criar um data frame vazio para colocar todos os links e títulos coletados antes de iniciar o loop.
 
 Obs: a primeira página possui um link repetido que não tem o mesmo texto, por isso começaremos na segunda.
 
