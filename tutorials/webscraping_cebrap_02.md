@@ -252,11 +252,11 @@ O primeiro passo na captura de uma página de internet é criar um objeto que co
 
 ```{r}
 library(rvest)
-url <- "https://search.folha.uol.com.br/search?q=previdencia&site=todos&results_count=86920&search_time=24%2C07&url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Dprevidencia%26site%3Dtodos&sr="
+url <- "https://search.folha.uol.com.br/search?q=previdencia&site=jornal&ed=15%2F10%2F2015&periodo=todos&results_count=9018&search_time=8%2C502&url=http%3A%2F%2Fsearch.folha.uol.com.br%2Fsearch%3Fq%3Dprevidencia%26site%3Djornal%26periodo%3Dtodos&sr=26"
 pagina <- read_html(url)
 ```
 
-Fomos para a segunda página mais uma vez para entender melhor o que diz nosso destino. Note que a estrutura do endereço URL é relativamente simples: "q" é o primeiro parâmetro e informa o texto buscado. "site=todos", informa que a busca é feita em todas as páginas do grupo Folha/UOL. "results_count", é o total de resultados e "search_time" o tempo que demorou para realização da busca. "url" é o próprio endereço. E, muito importante, "sr" é o número do primeiro resultado da página, que, no caso da Folha, pula de 25 em 25. Nesta atividade vamos capturar apenas a página 2, mas você já aprendeu na atividade anterior como capturar todas as páginas usando loops.
+Fomos para a segunda página mais uma vez para entender melhor o que diz nosso destino. Note que a estrutura do endereço URL é relativamente simples: "q" é o primeiro parâmetro e informa o texto buscado. "site=Djornal", informa que a busca é feita em todas as páginas com publicações realizadas na Edição Impressa. "results_count", é o total de resultados e "search_time" o tempo que demorou para realização da busca. "url" é o próprio endereço. E, muito importante, "sr" é o número do primeiro resultado da página, que, no caso da Folha, pula de 25 em 25. Nesta atividade vamos capturar apenas a página 2, mas você já aprendeu na atividade anterior como capturar todas as páginas usando loops.
 
 ```{r}
 class(pagina)
