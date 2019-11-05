@@ -273,10 +273,10 @@ Voltando ao nosso exemplo da busca na Folha de São Paulo, vamos obter os títul
 
 Em primeiro lugar, com o caminho do título e a função _html\_nodes_, extraímos os "nodes" com as "tags" que nos interessam:
 
-Obs: como o título está dentro de um elemento "text()" de uma tag "h2" dentro da tag "a", adicionamos o "h2/text()" no final do caminho.
+Obs: o título é de classe "c-headline__title" em uma tag "h2" dentro da tag "a", adicionamos o "h2[@class = 'c-headline__title']" no final do caminho.
 
 ```{r}
-nodes_titulos <- html_nodes(pagina, xpath = "//ol/li/div/div/a/h2/text()")
+nodes_titulos <- html_nodes(pagina, xpath = "//ol/li/div/div/a/h2[@class = 'c-headline__title']")
 ```
 
 Use a função "print" para observar o que capturamos.
@@ -288,7 +288,7 @@ titulos <- html_text(nodes_titulos)
 View(titulos)
 ```
 
-Vemos que o elemtento "text()" possui muitos caracteres extra. Vamos identificálos e retirá-los com a função _gsub_, já utilizada no Tutorial 1.
+Vemos que o elemtento "[@class = 'c-headline__title']" possui muitos caracteres extra. Vamos identificálos e retirá-los com a função _gsub_, já utilizada no Tutorial 1.
 
 ```{r}
 titulos[[1]]
