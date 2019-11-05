@@ -38,11 +38,11 @@ Os participantes, ao fim do curso, serão capazes de:
 
 [Tutorial 1](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_01.md) - Páginas com tabelas
 
-[Tutorial 2](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_02.Rmd) - Introdução ao XPath
+[Tutorial 2](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_02.md) - Introdução ao XPath
 
-[Tutorial 3](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_03.Rmd) - Captura de notícias da Folha
+[Tutorial 3](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_03.md) - Captura de notícias da Folha
 
-[Tutorial 4](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_04.Rmd) - Captura de notícias do Data Folha
+[Tutorial 4](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_04.md) - Captura de notícias do Data Folha
 
 [Tutorial 5](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_05.Rmd) - Formulários na web
 
