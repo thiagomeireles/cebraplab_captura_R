@@ -89,43 +89,54 @@ len_noticias <- str_length(noticias)
 len_noticias
 ```
 
-Vamos agora observar quais são os noticias nos quais a deputada menciona "Lula". Para tanto, usamos _str\_detect_
+Vamos agora observar quais são os noticias que mencionam "Lula" e "Bolsonaro". Para tanto, usamos _str\_detect_
 
 ```{r}
 str_detect(noticias, "Lula")
+str_detect(noticias, "Bolsonaro")
 ```
 
-Poderíamos usar o vetor lógico resultante para gerar um subconjunto dos noticias, apenas com aqueles nos quais a palavra "Lula" é mencionada. Mais simples, porém, é utilizar a função _str\_subset_, que funciona tal qual _str\_detect_, mas resulta num subconjunto em lugar de um vetor lógico:
+Poderíamos usar o vetor lógico resultante para gerar um subconjunto dos noticias, apenas com aqueles nos quais as palavras "Lula" e "Bolsonaro" são mencionadas. Mais simples, porém, é utilizar a função _str\_subset_, que funciona tal qual _str\_detect_, mas resulta num subconjunto em lugar de um vetor lógico:
 
 ```{r}
-noticias_constituicao <- str_subset(noticias, "Lula")
+noticias_lula <- str_subset(noticias, "Lula")
+noticias_bolsonaro <- str_subset(noticias, "Bolsonaro")
 ```
 
 Se quisessemos apenas a posição no vetor dos noticias que contêm "Lula", _str\_which_ faria o trabalho:
 
 ```{r}
 str_which(noticias, "Lula")
+str_which(noticias, "Bolsonaro")
 ```
 
-Voltando ao vetor completo, quantas vezes "Lula" é mencionada em cada noticias? Qual é o máximo de menções a "Lula" em um único discurso?
+Voltando ao vetor completo, quantas vezes "Lula" é mencionada em cada noticias? E Bolsonaro? Qual é o máximo de menções a "Lula" em um único discurso? E Bolsonaro
 
 ```{r}
 str_count(noticias, "Lula")
 max(str_count(noticias, "Lula"))
+str_count(noticias, "Bolsonaro")
+max(str_count(noticias, "Bolsonaro"))
 ```
 
-Vamos fazer uma substituição nos noticias. No lugar de "Lula" colocaremos a expressão "Lula, aquele pedaço de papel que não vale nada,". Podemos fazer a substituição com _str\_replace_ ou com _str\_replace\_all_. A diferença entre ambas é que _str\_replace_ substitui apenas a primeira ocorrênca encontrada, enquanto _str\_replace\_all_ substitui todas as ocorrências.
+Vamos fazer uma substituição nos noticias. No lugar de "Lula" colocaremos a expressão "Lula, guerreiro do povo brasileiro,". E no lugar de "Bolsonaro", "Bolsonaro, Brasil acima de tudo e Deus acima de todos," Podemos fazer a substituição com _str\_replace_ ou com _str\_replace\_all_. A diferença entre ambas é que _str\_replace_ substitui apenas a primeira ocorrênca encontrada, enquanto _str\_replace\_all_ substitui todas as ocorrências.
 
 ```{r}
-str_replace(noticias_constituicao, "Lula", "Lula, aquele pedaço de papel que não vale nada,")
-str_replace_all(noticias_constituicao, "Lula", "Lula, aquele pedaço de papel que não vale nada,")
+str_replace(noticias_lula, "Lula", "Lula, guerreiro do povo brasileiro,")
+str_replace_all(noticias_lula, "Lula", "Lula, guerreiro do povo brasileiro,")
+
+str_replace(noticias_bolsonaro, "Bolsonaro", "Bolsonaro, Brasil acima de tudo e Deus acima de todos,")
+str_replace_all(noticias_bolsonaro, "Bolsonaro", "Bolsonaro, Brasil acima de tudo e Deus acima de todos,")
 ```
 
-Em vez de substituir, queremos conhecer a posição das ocorrências de "Lula". Com _str\_locate_ e _str\_locate\_all_, respectivamente para a primeira ocorrência e todas as ocorrências, obtemos a posição de começo e fim do padrão buscado:
+Em vez de substituir, queremos conhecer a posição das ocorrências de "Lula" e de Bolsonaro. Com _str\_locate_ e _str\_locate\_all_, respectivamente para a primeira ocorrência e todas as ocorrências, obtemos a posição de começo e fim do padrão buscado:
 
 ```{r}
-str_locate(noticias_constituicao, "Lula")
-str_locate_all(noticias_constituicao, "Lula")
+str_locate(noticias_lula, "Lula")
+str_locate_all(noticias_lula, "Lula")
+
+str_locate(noticias_bolsonaro, "Bolsonaro")
+str_locate_all(noticias_bolsonaro, "Bolsonaro")
 ```
 
 Finalmente, notemos que os noticias começam sempre mais ou menos da mesma forma. Vamos retirar os 100 primeiros caracteres de cada discurso para observá-los. Usamos a função _str\_sub_, semelhante à função _substr_, para extrair um padaço de uma string:
@@ -157,7 +168,8 @@ Com a função _wordcloud_ do pacote de mesmo nome, podemos rapidamente visualiz
 ```{r}
 library(wordcloud)
 wordcloud(noticias, max.words = 50)
+wordcloud(noticias_lula, words = 50)
+wordcloud(noticias_bolsonaro, words = 50)
 ```
 
-Não muito bonita. Voltaremos a fazer nuvem de palavras depois de aprendermos outra maneiras de trabalharmos com texto como dado no R.
-
+Não muito bonitas. Voltaremos a fazer nuvem de palavras depois de aprendermos outra maneiras de trabalharmos com texto como dado no R.
