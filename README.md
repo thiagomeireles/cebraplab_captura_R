@@ -44,19 +44,19 @@ Os participantes, ao fim do curso, serão capazes de:
 
 [Tutorial 4](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_04.md) - Captura de notícias do Data Folha
 
-[Tutorial 5](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_05.Rmd) - Formulários na web
+[Tutorial 5](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_05.md) - Formulários na web
 
-[Tutorial 6](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_06.Rmd) - Twitter
+[Tutorial 6](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_06.md) - Twitter
 
-[Tutorial 7](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_07.Rmd) - Facebook
+[Tutorial 7](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_07.md) - Facebook
 
-[Tutorial 8](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_08.Rmd)- PDF
+[Tutorial 8](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_08.md)- PDF
 
-[Tutorial 9](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_09.Rmd) - Mineração de Texto - pacote stringr
+[Tutorial 9](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_09.md) - Mineração de Texto - pacote stringr
 
-[Tutorial 10](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_10.Rmd) - Mineração de Texto - pacote tm
+[Tutorial 10](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_10.md) - Mineração de Texto - pacote tm
 
-[Tutorial 11](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_11.Rmd) - Mineração de Texto - pacote tidytext
+[Tutorial 11](https://github.com/thiagomeireles/cebraplab_captura_R/blob/master/tutorials/webscraping_cebrap_11.md) - Mineração de Texto - pacote tidytext
 
 ### Referências
 
