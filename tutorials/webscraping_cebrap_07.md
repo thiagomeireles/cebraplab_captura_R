@@ -54,7 +54,7 @@ Alternativamente à autenticação com Id e chave secreta, podemos utilizar o to
 Clique [aqui](https://developers.facebook.com/tools/explorer). Na página à qual você será redirecionad@, você poderá copiar o "Token de acesso". Durante a aula, deixarei um token válido para vocês explorarem minha conta.
 
 ```{r}
-token_acesso <- 'EAACEdEose0cBAKJgbGubZCMUagDwq3ZAIlVrpuZAlCRPGCEqF7qjlSpaRbEqQOUHh8jsHyNTQxU3aj4ZCNw5r3xyrV2Jd2Qv5wvScOkLCGRBsVWgjvdoOZB7t3VZBEdrsrvDar30CIGUkV1dkNklJoC6MHSuFpBp0nWe4O7LH4q2po0ovKBxiL6sH5ZCd8cyhcZD'
+token_acesso <- 'colartokenacesso'
 ```
 
 Não se frustre se não der certo a primeira vez (não deu para mim). Recomece o processo e leia o tutorial que indiquei.
