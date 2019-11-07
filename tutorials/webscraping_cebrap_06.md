@@ -176,3 +176,26 @@ Como se pode observar, o tutorial foi revisado durante a quarta-feira de futebol
 Para explorar de forma mais ampla o pacote _twitterR_ é possível observar sua [documentação](https://www.rdocumentation.org/packages/twitteR/versions/1.1.9). Aliás, essa é uma dica para qualquer pacote do R que tenha contato e não saiba bem como funciona.
 
 Existem outras opções para acessar dados no Twitter. Caso tenha um tempo extra, tente explorar as funcionalidades do pacote [rtweet](https://rtweet.info/) que parece possuir algumas funções bem amigáveis. A [documentação](https://www.rdocumentation.org/packages/rtweet/versions/0.4.0) também é disponibilizada.
+
+Para acessá-lo, vamos reiniciar a sessão (algumas funções são comuns ao _twitteR_) e fazer a autenticação pelas nossas chaves de acesso. Após isso pode seguir com o tutorial indicado.
+
+```{r}
+.rs.restartR()
+if (!require("rtweet")) install.packages("rtweet"); library(rtweet)
+
+api_key <- "X6eyM1PQL8HlOkHlSyMvFwYhd"
+api_secret_key <- "qMFfozS0VPwL1Gp4JXFvRKrMYbjUXHjfZk2UThnKUea1AS6RHq"
+access_token <- "28703537-Kdcqlok4IyF6DETmozFsWT33dGnMMSEMnfDZiYzS9"
+access_token_secret <- "5SbV0vl2jYpkO0CApruvWfNPoGAVb1NUPb4ah0gZAYAzx"
+
+## Autenticação pelo navegador
+token <- create_token(
+  app = "rstatsjournalismresearch",
+  consumer_key = api_key,
+  consumer_secret = api_secret_key,
+  access_token = access_token,
+  access_secret = access_token_secret)
+
+# Conferindo o token
+get_token()
+```
