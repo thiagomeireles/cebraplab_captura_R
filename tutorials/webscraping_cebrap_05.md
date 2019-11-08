@@ -101,3 +101,87 @@ links <- as.vector(links)
 dados <- bind_cols(dados, links)
 ```
 
+## Obtendo informações sobre processos no STF
+
+Diferentemente dos Executivos e Legislativos no Brasil, os órgãos do Judiciário, em diversas esferas, têm avançado bem pouco em transparência e no estabelecimento de política de dados abertos. O STF não é exceção. A despeito do grande número de pesquisa sobre o STF, ainda é preciso raspar os dados diretamente do potal do Tribunal para construir bases de dados sobre processos que lá tramitam.
+
+Vamos rapidamnte ver um exemplo de como obter dados do STF.
+
+O primeiro passo será encarar este formulário [aqui](http://www.stf.jus.br/portal/processo/pesquisarProcesso.asp). Queremos buscar os processos por seu número (afinal de contas, no futuro vamos pegar todos os processos de um determinado tipo de 1 até "n"). O formuláio está logo no centro da página.
+
+Vamos proceder como fizemos no caso do buscador da ALESP. Começaremos estabelecendo uma sessão (conexão) com o servidor. A seguir, vamos raspar a página que contém o formulário e produzir uma lista de fomulários:
+
+```{r}
+stf_url <- "http://www.stf.jus.br/portal/processo/pesquisarProcesso.asp"
+
+stf_session <- html_session(stf_url)
+
+stf_pagina <- read_html(stf_session)
+
+stf_form_list <- html_form(stf_pagina)
+
+stf_form_list
+```
+
+Veja que há três formulários diferentes na página. Como decidir entre eles? Precisamos examinar o código HTML. Em geral, inspecionando o campo da busca já teremos um indicativo de qual é o formulário que nos interessa.
+
+Neste caso, queremos fazer a busca por número de processo e o campo de busca se chama "numero". Qual é o formulário que contém tal informação? O terceiro:
+
+```{r}
+  stf_form <- stf_form_list[[3]]
+
+  stf_form
+```
+Escolhido o formulário, precisamos preenchê-lo. Aqui nos depararemos com um novo problema: como saber qual campo é de preenchimento obrigatório? Esta informação pode esta até visível na página, e esta será nossa primeira pista. No caso do STF, não está. "dropmsgoption", por exemplo, é um campo obrigatório que ainda não está preenchido no formulário que capturamos. Tentativa e erro é o recurso final e tente se colocar no lugar de quem criou o formulário para preenchê-lo.
+
+Note que o campo "dropmsgoption" é uma tag "select" e não "input". As tags "select" vêm acompanhadas, em geral, de suas opções, que relacionam o texto da opção com seu código. No nosso caso, queremos o código "1!
+
+Vamos, então, preencher os dois parâmetos do formulário. Por uma razão que não convém explicar, vamos omitir na nossa busca o nome do processo (ex: ADI, AC, Pet, etc). Buscaremos apenas o número.
+
+```{r}
+stf_form <- set_values(stf_form,
+                          'dropmsgoption' = 1,
+                          'numero' = "500")
+stf_form                  
+```
+
+Note agora que o botão de preenchimento do formulário não tem nome. Não tem problema. A função _submit\_form_ é bastante inteligente e procurará o campo de submissão do formulário se você não preenhcer o parâmetro "submit" (e vai apontar o nome dele e m uma mensagem. Da mesma forma, se você escrever um nome inexistente, receberá uma mensagem de erro com todos os nomes possíveis dos campos de submissão.
+
+```{r}
+stf_submission <- submit_form(session = stf_session, 
+                                 form = stf_form)
+```
+Faça o mesmo processo manualmente. O resultado é uma tabela com os links para todos os diferentes tipos de processos com o número buscado. Podemos extrair a tabela (você já sabe fazer isso):
+
+```{r}
+stf_resultado <- read_html(stf_submission)
+
+tabela_processos <- html_table(stf_resultado)[[1]]
+```
+
+E os links dos processos (você também sabe fazer isso). Os links precisarão de um pouco de limpeza e utilizaremos a função _str\_sub_ do pacote _stringr_ para resolver este problema:
+
+```{r}
+nodes_links_processos <- html_nodes(stf_resultado, xpath = "//table//a")
+links_processos <- html_attr(nodes_links_processos, name = "href")
+
+library(stringr)
+links_processos <- str_sub(links_processos, 8, str_length(links_processos))
+links_processos <- paste0("https://www.stf.jus.br/portal/processo/", links_processos)
+```
+
+Vamos adicionar os links à tabela:
+
+```{r}
+tabela_processos$links <- links_processos
+```
+
+Excelente! Podemos escolher o link de um processo usando a tabela (ADI, por exemplo):
+
+```{r}
+link_adi <- tabela_processos$links[str_detect(tabela_processos$Processo, "ADI")]
+```
+
+No fim, é possível executar loops para extração nas páginas de cada um dos processos identificando os padrões de *xpath* para cada informação. Caso queira, utilize como desafio para treinar suas habilidades nesses loops de raspagem.
+
+Dica: as páginas estão em tabelas, mas para cada tipo de processo a estrutura da tabela e dos *xpaths* varia.
